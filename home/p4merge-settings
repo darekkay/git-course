@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--perforce-xml-version=1.0-->
+<PropertyList varName="ApplicationSettings" IsManaged="TRUE">
+ <String varName="CharSet">utf8</String>
+ <PropertyList varName="Connection" IsManaged="TRUE">
+  <String varName="ApplicationLanguage">en</String>
+ </PropertyList>
+ <String varName="DiffOption">dl</String>
+ <Font varName="Font">
+  <family>Consolas</family>
+  <pointSize>10</pointSize>
+  <weight>Normal</weight>
+  <italic>false</italic>
+ </Font>
+ <Bool varName="InlineDiffsEnabled">true</Bool>
+ <String varName="LineEnding">Windows</String>
+ <ByteArray varName="MergeSplitter">AAAA/wAAAAAAAAACAAABhQAAAccBAAAABgEAAAAC</ByteArray>
+ <ByteArray varName="MergeTopSplitter">AAAA/wAAAAAAAAADAAACYwAAAlUAAAJTAQAAADIBAAAAAQ==</ByteArray>
+ <PropertyList varName="PreferencesDialog" IsManaged="TRUE">
+  <ByteArray varName="WindowGeometry">AdnQywABAAAAAAIbAAABEwAABAQAAAN9AAACIwAAATIAAAP8AAADdQAAAAAAAA==</ByteArray>
+ </PropertyList>
+ <Bool varName="ShowTabsSpaces">true</Bool>
+ <Bool varName="TabInsertsSpaces">false</Bool>
+ <Int varName="TabWidth">4</Int>
+ <PropertyList varName="Windows" IsManaged="TRUE">
+  <PropertyList varName="CompareDialog" IsManaged="TRUE">
+   <String varName="DefaultPath">C:/Program Files/Perforce</String>
+   <ByteArray varName="WindowGeometry">AdnQywABAAAAAALPAAABjQAABLAAAAJ2AAAC1wAAAasAAASoAAACbgAAAAAAAA==</ByteArray>
+  </PropertyList>
+  <PropertyList varName="Diff" IsManaged="TRUE">
+   <Bool varName="DiffCombined">false</Bool>
+   <ByteArray varName="WindowGeometry">AdnQywABAAD////4////+AAAB4cAAAQXAAADwQAAAP8AAAVgAAAEHgAAAAACAA==</ByteArray>
+   <ByteArray varName="WindowState">AAAA/wAAAAD9AAAAAAAAB4AAAAPJAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAkAE0AYQBpAG4AVwBpAG4AZABvAHcAIABUAG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=</ByteArray>
+  </PropertyList>
+  <PropertyList varName="Merge" IsManaged="TRUE">
+   <Bool varName="ShowBase">true</Bool>
+   <ByteArray varName="WindowGeometry">AdnQywABAAD////4////+AAAB4cAAAQXAAABCgAAAPAAAAd/AAAEDwAAAAACAA==</ByteArray>
+   <ByteArray varName="WindowState">AAAA/wAAAAD9AAAAAAAAB4AAAAPJAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAkAE0AYQBpAG4AVwBpAG4AZABvAHcAIABUAG8AbwBsAGIAYQByAQAAAAD/////AAAAAAAAAAA=</ByteArray>
+  </PropertyList>
+  <PropertyList varName="MergeDiff" IsManaged="TRUE">
+   <Bool varName="ShowLineNumbers">false</Bool>
+  </PropertyList>
+ </PropertyList>
+</PropertyList>
