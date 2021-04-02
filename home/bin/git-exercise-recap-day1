@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+#
+# Tasks:
+#   1. Leave **detached HEAD** state.
+#   2. **Reset** `master` to `bugfix`.
+#   3. **Squash** Cx and Cx into one commit.
+#   4. **Cherry-pick** Cx onto `master`.
+#
+
+set -e
+set -o pipefail
+set -o errtrace
+set -o errexit
+
+git init
+git fake
+git branch -m master main
+
+git branch feature
+git branch bugfix
+
+git checkout bugfix
+git fake 3
+
+git checkout feature
+git fake 3
+
+git checkout main
+git fake
+git checkout $(git rev-parse main)

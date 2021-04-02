@@ -1,0 +1,103 @@
+[user]
+  name = First Last
+  email = first.last@example.com
+
+[core]
+  # Windows
+  autocrlf = true
+  safecrlf = false     # Don't warn about converting between CRLF and LF
+  filemode = false     # Ignore file mode changes (recommended for Windows)
+  trustctime = false   # Ignore ctime differences between the index and the working tree
+
+  # Unix
+  # autocrlf = input   # Prevent checking in CRLF files
+  # safecrlf = true    # Warn about converting between CRLF and LF
+  # filemode = true    # Do not ignore file mode changes (recommended for Mac)
+
+  # Default editor: Notepad++
+  editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+  # Notepad++ 64bit
+  # editor = "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+[color]
+  ui = true
+
+[diff]
+  # Default diff tool
+  tool = p4merge
+
+[difftool "p4merge"]
+  # Path to p4merge.exe (cmd is deprecated)
+  path = C:/Program Files/Perforce/p4merge.exe
+
+[merge]
+  # Default merge tool
+  tool = p4merge
+
+[mergetool "p4merge"]
+  # Path to p4merge.exe (cmd is deprecated)
+  path = C:/Program Files/Perforce/p4merge.exe
+
+[mergetool]
+  keepBackup = false       # Don't create .orig files
+  prompt = false           # Don't prompt before each invocation of the merge tool
+  trustexitcode = false
+
+[log]
+  # Print out ref names on commits by default
+  decorate = short
+
+[pretty]
+  # Custom log format and colors
+  custom = "%Cred%h%Creset -%C(cyan)%d%Creset %s %C(green)(%cr) %Cblue<%an>%Creset"
+
+[fetch]
+  prune = true              # Always prune when fetching
+
+[rebase]
+  # Automatically stash/unstash the working directory before/after rebases
+  autostash = true
+
+[rerere]
+  # Reuse recorded resolution
+  enabled = true
+
+[init]
+  # Use a consistent default branch name
+  # TODO: switch to main as soon as Git default changes
+  defaultBranch = master
+
+[alias]
+  # Log
+  lg   = log --graph --pretty=custom
+  lga  = log --graph --pretty=custom --all
+
+  # Common shortcuts
+  co = checkout
+  cm = checkout master
+  cp = cherry-pick
+  mt = mergetool
+  rc = rebase --continue
+  pom = push origin master
+
+  # Push and create a remote branch based on the current one (branch → origin/branch)
+  ph = push -u origin HEAD
+
+  # View the current working tree status using the short format
+  s = status -s
+  st = status
+
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
+
+  # Amend the currently staged files to the latest commit
+  amend = commit --amend --reuse-message=HEAD
+
+  # External scripts
+  fake = !$HOME/bin/git-fake
+  ex-merge-conflict = !$HOME/bin/git-exercise-merge-conflict
+  ex-stage-commit = !$HOME/bin/git-exercise-stage-commit
+  ex-recap-day1 = !$HOME/bin/git-exercise-recap-day1

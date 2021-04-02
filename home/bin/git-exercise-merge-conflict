@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+# Generates a merge conflict
+#
+
+set -e
+set -o pipefail
+set -o errtrace
+set -o errexit
+
+git init
+printf "Exercise: Merge conflicts\n\nThis is a day!\n\nChoose wisely.\n" > day.txt
+git add .
+git commit -m "Day"
+
+git checkout -b feature
+printf "Exercise: Merge conflicts\n\nThis is a bad day!\n\nChoose wisely.\n" > day.txt
+git commit -am "Bad day"
+
+git checkout master
+printf "Exercise: Merge conflicts\n\nThis is a wonderful day!\n\nChoose wisely.\n" > day.txt
+git commit -am "Wonderful day"

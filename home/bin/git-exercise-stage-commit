@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# - Starting position:
+#   - File A: Working directory
+#   - File B: Staging area
+#   - File C: Staging area
+# - Task:
+#    - Create a commit containing only changes from files `A` and `B`, not including any changes from file `C`.
+
+set -e
+set -o pipefail
+set -o errtrace
+set -o errexit
+
+git init
+echo "B" > b.txt
+echo "C" > c.txt
+git add .
+
+echo "A" > a.txt
