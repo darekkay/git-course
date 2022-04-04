@@ -26,7 +26,7 @@ fi
 echo "Downloading configuration files..."
 
 curl -L -o "$HOME/.gitconfig" "$REPO/home/.gitconfig"
-curl -L -o "$HOME/.p4merge/ApplicationSettings.xml" "$REPO/p4merge-settings"
+curl -L -o "$HOME/.p4merge/ApplicationSettings.xml" "$REPO/home/p4merge-settings"
 curl -L -o "$HOME/bin/git-fake" "$REPO/home/bin/git-fake"
 curl -L -o "$HOME/bin/git-exercise-merge-conflict" "$REPO/home/bin/git-exercise-merge-conflict"
 curl -L -o "$HOME/bin/git-exercise-recap-day1" "$REPO/home/bin/git-exercise-recap-day1"
