@@ -22,11 +22,11 @@ fi
 
 for ((commit = 1; commit <= $commit_count; commit++)); do
 
-  UUID=$(LC_CTYPE=C tr -dc 'a-f0-9' < /dev/urandom | head -c 8 | xargs)
+  UUID=$(LC_ALL=C tr -dc 'a-f0-9' < /dev/urandom | head -c 8 | xargs)
   filename="file-$UUID.txt"
 
   # Create file.
-  echo contents for $filename > "$filename"
+  echo "contents for $filename" > "$filename"
 
   # Stage file.
   if ! git add -- "$filename"; then
