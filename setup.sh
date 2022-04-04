@@ -51,6 +51,7 @@ if [ ! -f "C:/Program Files (x86)/Notepad++/notepad++.exe" ]; then
     echo "Notepad++ 64bit found. Updating ~/.gitconfig...";
     sed -i "s/C:\/Program Files (x86)\/Notepad++/C:\/Program Files\/Notepad++/" "$HOME/.gitconfig"
   else
-    echo "Notepad++ 64bit not found.";
+    echo "Notepad++ 64bit not found. Setting up VSCode as fallback...";
+    sed -i.bak "s/'C:\/Program Files (x86)\/Notepad++\/notepad++.exe' -multiInst -notabbar -nosession -noPlugin/code --wait/" "$HOME/.gitconfig"
   fi
 fi
