@@ -53,7 +53,12 @@
   custom = "%Cred%h%Creset -%C(cyan)%d%Creset %s %C(green)(%cr) %Cblue<%an>%Creset"
 
 [fetch]
-  prune = true              # Always prune when fetching
+  # Always prune when fetching
+  prune = true
+
+[pull]
+  # Use merge when pulling
+  rebase = false
 
 [rebase]
   # Automatically stash/unstash the working directory before/after rebases
