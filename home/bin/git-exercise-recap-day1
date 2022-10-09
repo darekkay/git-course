@@ -2,9 +2,9 @@
 #
 # Tasks:
 #   1. Leave **detached HEAD** state.
-#   2. **Reset** `master` to `bugfix`.
+#   2. **Reset** `main` to `bugfix`.
 #   3. **Squash** Cx and Cx into one commit.
-#   4. **Cherry-pick** Cx onto `master`.
+#   4. **Cherry-pick** Cx onto `main`.
 #
 
 set -e
@@ -14,7 +14,6 @@ set -o errexit
 
 git init
 git fake
-git branch -m master main
 
 git branch feature
 git branch bugfix

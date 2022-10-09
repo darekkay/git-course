@@ -70,8 +70,7 @@
 
 [init]
   # Use a consistent default branch name
-  # TODO: switch to main as soon as Git default changes
-  defaultBranch = master
+  defaultBranch = main
 
 [alias]
   # Log
@@ -80,11 +79,11 @@
 
   # Common shortcuts
   co = checkout
-  cm = checkout master
+  cm = checkout main
   cp = cherry-pick
   mt = mergetool
   rc = rebase --continue
-  pom = push origin master
+  pom = push origin main
 
   # Push and create a remote branch based on the current one (branch → origin/branch)
   ph = push -u origin HEAD

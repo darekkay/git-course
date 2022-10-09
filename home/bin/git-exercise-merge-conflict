@@ -17,6 +17,6 @@ git checkout -b feature
 printf "Exercise: Merge conflicts\n\nThis is a bad day!\n\nChoose wisely.\n" > day.txt
 git commit -am "Bad day"
 
-git checkout master
+git checkout main
 printf "Exercise: Merge conflicts\n\nThis is a wonderful day!\n\nChoose wisely.\n" > day.txt
 git commit -am "Wonderful day"
