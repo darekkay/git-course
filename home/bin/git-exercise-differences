@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# Tasks:
+#   1. Find out the unstaged changes in your working directory.
+#   2. Find out the stashed changes that "git commit" would take (without running "git commit").
+#   3. Find out the changes in the second commit of the repository.
+#
+# Bonus question: How do you revert your unstaged changes?
+#
+
+set -e
+set -o pipefail
+set -o errtrace
+set -o errexit
+
+git init
+printf "Exercise: Viewing differences\n\nLorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.\n\nIt's also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout.\n\nLorem ipsum is mostly a part of a English text by the classical author and philosopher Cicero. Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's not genuine, correct, or comprehensible Latin anymore.\n\nWhile lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.\n" > readme.txt
+git add .
+git commit -m "Init repository"
+
+printf "Exercise: Viewing differences\n\nLorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.\n\nIt's also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, eg typography, font, or layout.\n\nLorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero. Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's not genuine, correct, or comprehensible Latin anymore.\n\nWhile lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.\n" > readme.txt
+git add .
+git commit -m "Fix language"
+
+printf "Exercise: Viewing differences\n\nLorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.\n\nIt's also called placeholder (or filler) text. It's a convenient tool for mock-ups. It helps to outline the visual elements of a document or presentation, e.g. typography, font, or layout.\n\nLorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero. Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's not genuine, correct, or comprehensible Latin anymore.\n\nWhile lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and others are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.\n" > readme.txt
+git add .
+git commit -m "Fix abbreviation"
+
+printf "Exercise: Viewing differences\n\nIf you're waiting for the waiter, aren't you the waiter?\n\nLorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.\n\nLorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero. Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's not genuine, correct, or comprehensible Latin anymore.\n\nWhile lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and other letters are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.\n" > readme.txt
+git add .
+
+printf "Exercise: Viewing differences\n\nIf you're waiting for the waiter, aren't you the waiter?\n\nLorem ipsum is a pseudo-Latin text used in web design, typography, layout, and printing in place of English to emphasise design elements over content.\n\nLorem ipsum is mostly a part of a Latin text by the classical author and philosopher Cicero. Its words and letters have been changed by addition or removal, so to deliberately render its content nonsensical; it's not genuine, correct, or comprehensible Latin anymore.\n\nWhile lorem ipsum's still resembles classical Latin, it actually has no meaning whatsoever. As Cicero's text doesn't contain the letters K, W, or Z, alien to latin, these, and other letters are often inserted randomly to mimic the typographic appearence of European languages, as are digraphs not to be found in the original.\nToday's numbers are: 4, 8, 15, 16, 23 and 42\n" > readme.txt
