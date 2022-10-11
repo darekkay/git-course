@@ -56,3 +56,5 @@ if [ ! -f "C:/Program Files (x86)/Notepad++/notepad++.exe" ]; then
     sed -i.bak "s/'C:\/Program Files (x86)\/Notepad++\/notepad++.exe' -multiInst -notabbar -nosession -noPlugin/code --wait/" "$HOME/.gitconfig"
   fi
 fi
+
+echo "Setup finished."
