@@ -13,6 +13,14 @@ set -o errtrace
 set -o errexit
 
 git init
+
+touch a.txt
+touch b.txt
+touch c.txt
+
+git add a.txt b.txt c.txt
+git commit -m "Init repository"
+
 echo "B" > b.txt
 echo "C" > c.txt
 git add .
