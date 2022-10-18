@@ -13,6 +13,7 @@ set -o errtrace
 set -o errexit
 
 git init
+
 git fake
 
 git branch feature

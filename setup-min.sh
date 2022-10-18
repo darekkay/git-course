@@ -10,8 +10,6 @@ REPO="https://raw.githubusercontent.com/darekkay/git-course/master"
 echo "Creating required folders..."
 
 mkdir -p "$HOME/bin"
-mkdir -p "$HOME/.p4merge"
-mkdir -p "$HOME/.ssh"
 
 echo "Backing up existing files..."
 
@@ -19,16 +17,8 @@ if [ -e "$HOME/.gitconfig" ]
   then cp "$HOME/.gitconfig" "$HOME/.gitconfig-$(date +%s).backup"
 fi
 
-if [ -e "$HOME/.ssh/config" ]
-  then cp "$HOME/.ssh/config" "$HOME/.ssh/config-$(date +%s).backup"
-fi
-
 echo "Downloading workshop files..."
 
-curl -L -o "$HOME/.gitconfig" "$REPO/home/.gitconfig"
-curl -L -o "$HOME/.p4merge/ApplicationSettings.xml" "$REPO/home/p4merge-settings"
-
-# TODO extract a curl + chmod function
 curl -L -o "$HOME/bin/git-fake" "$REPO/home/bin/git-fake"
 
 curl -L -o "$HOME/bin/git-exercise-commit-wrong-branch" "$REPO/home/bin/git-exercise-commit-wrong-branch"
@@ -44,23 +34,26 @@ chmod +x "$HOME/bin/git-exercise-merge-conflict"
 chmod +x "$HOME/bin/git-exercise-recap"
 chmod +x "$HOME/bin/git-exercise-stage-commit"
 
-echo "Generating SSH key..."
+echo "Configuring Git..."
 
-ssh-keygen -t rsa -b 4096 -N "" -C "git-jumpstart" -f ~/.ssh/git-jumpstart <<<y
-printf "\n\nHost github.\x69\x62\x6d.com\n  IdentityFile ~/.ssh/git-jumpstart" >> ~/.ssh/config
+git config --global init.defaultBranch main
 
-echo "Verifying Notepad++ setup..."
+git config --global pretty.custom "%Cred%h%Creset -%C(cyan)%d%Creset %s %C(green)(%cr) %Cblue<%an>%Creset"
 
-if [ ! -f "C:/Program Files (x86)/Notepad++/notepad++.exe" ]; then
-  echo "Notepad++ 32bit not found.";
+git config --global alias.s "status -s"
+git config --global alias.lg "log --graph --pretty=custom"
+git config --global alias.lga "log --graph --pretty=custom --all"
+git config --global alias.q "log --graph --pretty=custom --first-parent -20"
+git config --global alias.amend "commit --amend --reuse-message=HEAD"
+git config --global alias.ph "push -u origin HEAD"
+git config --global alias.pf "push --force-with-lease"
+git config --global alias.rb "!f() { git rebase -i HEAD~\"$1\"; }; f"
+git config --global alias.fake "!\$HOME/bin/git-fake"
 
-  if [ -f "C:/Program Files/Notepad++/notepad++.exe" ]; then
-    echo "Notepad++ 64bit found. Updating ~/.gitconfig...";
-    sed -i "s/C:\/Program Files (x86)\/Notepad++/C:\/Program Files\/Notepad++/" "$HOME/.gitconfig"
-  else
-    echo "Notepad++ 64bit not found. Setting up VSCode as fallback...";
-    sed -i.bak "s/'C:\/Program Files (x86)\/Notepad++\/notepad++.exe' -multiInst -notabbar -nosession -noPlugin/code --wait/" "$HOME/.gitconfig"
-  fi
-fi
+git config --global alias.ex-commit-branch "!\$HOME/bin/git-exercise-commit-wrong-branch"
+git config --global alias.ex-differences "!\$HOME/bin/git-exercise-differences"
+git config --global alias.ex-merge-conflict "!\$HOME/bin/git-exercise-merge-conflict"
+git config --global alias.ex-stage-commit "!\$HOME/bin/git-exercise-stage-commit"
+git config --global alias.ex-recap "!\$HOME/bin/git-exercise-recap"
 
-echo "Setup finished."
+echo "Git workshop setup finished."

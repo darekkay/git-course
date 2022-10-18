@@ -9,6 +9,7 @@ set -o errtrace
 set -o errexit
 
 git init
+
 printf "Exercise: Merge conflicts\n\nThis is a day!\n\nChoose wisely.\n" > day.txt
 git add .
 git commit -m "Day"

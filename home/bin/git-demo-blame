@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+#
+# Goal:
+#   Show the usefulness of avoiding unnecessary commits.
+#
+# Compare credits-v1.js history with credits-v2.js history.
+#
+
+set -e
+set -o pipefail
+set -o errtrace
+set -o errexit
+
+git init
+
+printf "/** Task #42: Implement credits addition */" > credits-v1.js
+git add .
+git commit -m "Init repository"
+
+printf "function addCredits(c1,c2) {}\n" >credits-v1.js
+git add .
+git commit -m "WIP"
+
+printf "function addCredits(c1,c2) {\nconst result = c1 + c2;\nreturn Math.min(result, 90);\n}\n" >credits-v1.js
+git add .
+git commit -m "Implement addCredits"
+
+printf "function addCredits(c1, c2) {\n  const result = c1 + c2;\n  return Math.min(result, 90);\n}\n" >credits-v1.js
+git add .
+git commit -m "Fix formatting"
+
+printf "function addCredits(credits1, credits2) {\n  const result = credits1 + credits2;\n  return Math.min(result, 90);\n}\n" >credits-v1.js
+git add .
+git commit -m "Implement PR comments"
+
+printf "function addCredits(credits1, credits2) {\n  const result = credits1 + credits2;\n  return Math.min(result, 100);\n}\n" >credits-v1.js
+git add .
+git commit -m "Change max credits"
+
+printf "function addCredits(credits1, credits2) {\n  const result = credits1 + credits2;\n  return Math.min(result, 100);\n}\n" >credits-v2.js
+git add .
+git commit -m "Implement credits addition (#42)
+
+According to the requirements, the credits are capped at 100."
+

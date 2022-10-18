@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Tasks:
+#   1. The "Wrong branch" commit should have been done on a new "feature" branch. Fix this.
+#   2. Undo your changes.
+#   3. The "Wrong branch" commit should have been done on the existing "bugfix" branch. Fix this.
+#
+
+set -e
+set -o pipefail
+set -o errtrace
+set -o errexit
+
+git init
+
+git fake 3
+
+git switch -C bugfix HEAD~1
+git fake
+
+git switch main
+
+printf "Exercise: Move this change to a new commit\n" > readme.txt
+git add .
+git commit -m "Wrong branch"
+

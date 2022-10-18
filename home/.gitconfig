@@ -102,7 +102,8 @@
 
   # External scripts
   fake = !$HOME/bin/git-fake
+  ex-commit-branch = !$HOME/bin/git-exercise-commit-wrong-branch
   ex-differences = !$HOME/bin/git-exercise-differences
   ex-merge-conflict = !$HOME/bin/git-exercise-merge-conflict
   ex-stage-commit = !$HOME/bin/git-exercise-stage-commit
-  ex-recap-day1 = !$HOME/bin/git-exercise-recap-day1
+  ex-recap = !$HOME/bin/git-exercise-recap
