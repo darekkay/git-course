@@ -26,5 +26,11 @@ git checkout feature
 git fake 3
 
 git checkout main
-git fake
+
+echo "Hello World" > hello.txt
+git add .
+git commit -m "C7"
+
 git checkout $(git rev-parse main)
+
+echo "Hello Universe" > hello.txt
