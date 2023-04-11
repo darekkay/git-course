@@ -20,6 +20,9 @@
   # Notepad++ 64bit
   # editor = "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 
+  # Use less only if required and keep the output
+  # pager = less -FRSX
+
 [color]
   ui = true
 
