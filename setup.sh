@@ -61,6 +61,8 @@ if [ ! -f "C:/Program Files (x86)/Notepad++/notepad++.exe" ]; then
     echo "Notepad++ 64bit not found. Setting up VSCode as fallback...";
     sed -i.bak "s/'C:\/Program Files (x86)\/Notepad++\/notepad++.exe' -multiInst -notabbar -nosession -noPlugin/code --wait/" "$HOME/.gitconfig"
   fi
+else
+  echo "Notepad++ 32bit configured successfully.";
 fi
 
 echo "Setup finished."
