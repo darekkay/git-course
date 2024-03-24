@@ -26,6 +26,11 @@ set -o pipefail
 set -o errtrace
 set -o errexit
 
+if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+  echo "The current directory is already part of an existing Git repository. Change to a different directory."
+  exit 1
+fi
+
 git init
 
 git fake
